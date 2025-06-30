@@ -1,0 +1,245 @@
+/* dph_ancis/css/style.css */
+
+/*--- General Body and Typography ---*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f7f6; /* Light background for main area */
+    padding-bottom: 40px;
+}
+
+/* container-fluid is used now for the main layout */
+.container-fluid {
+     padding: 0; /* Remove default container padding if you want edge-to-edge sidebar */
+     /* If you want padding on the sides of the entire layout, add it to the row */
+}
+
+
+/*--- Navbar Styling (Keep mostly the same) ---*/
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0; /* Remove bottom margin here, add space in content below */
+    background-color: #003366 !important; /* Darker blue, closer to image */
+}
+.navbar-dark .navbar-brand { color: #fff; font-weight: 500; }
+.navbar-dark .navbar-nav .nav-link { color: rgba(255, 255, 255, 0.85); }
+.navbar-dark .navbar-nav .nav-link:hover { color: #fff; }
+.navbar-dark .navbar-nav .nav-item.active .nav-link { color: #fff; font-weight: 500; }
+.navbar-dark .dropdown-menu { background-color: #fff; border: none; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); }
+.navbar-dark .dropdown-item { color: #333; }
+.navbar-dark .dropdown-item:hover { background-color: #f4f7f6; color: #0056b3; }
+
+
+/*--- Layout: Sidebar and Main Content ---*/
+.dashboard-layout-row {
+     margin: 0; /* Remove default row margins */
+     min-height: calc(100vh - 60px); /* Ensure layout takes at least viewport height minus header/footer approx */
+}
+
+.sidebar-column {
+    background-color: #003366; /* Dark background for sidebar, same as navbar */
+    color: #fff; /* White text */
+    padding: 20px 0; /* Padding top/bottom */
+    /* Use Bootstrap's column classes for width */
+}
+
+.sidebar-user-profile {
+    text-align: center;
+    padding: 0 15px 20px 15px; /* Padding around profile info */
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+}
+
+.sidebar-user-profile .profile-icon {
+    font-size: 4rem; /* Large icon */
+    color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+    margin-bottom: 10px;
+}
+
+.sidebar-user-profile .user-name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.sidebar-user-profile .user-role {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.sidebar-nav .list-group-item {
+    background-color: transparent; /* Transparent background */
+    color: rgba(255, 255, 255, 0.8); /* White text */
+    border: none; /* Remove default list group border */
+    padding: 12px 20px; /* Padding for links */
+    font-size: 1rem;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.sidebar-nav .list-group-item:hover {
+    background-color: #0056b3; /* Lighter blue on hover */
+    color: #fff;
+}
+.sidebar-nav .list-group-item.active {
+     background-color: #0056b3; /* Active background */
+     color: #fff;
+     font-weight: 500;
+}
+
+.sidebar-nav .list-group-item .action-icon {
+    margin-right: 15px;
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.7); /* Muted icon color */
+}
+.sidebar-nav .list-group-item:hover .action-icon,
+.sidebar-nav .list-group-item.active .action-icon {
+    color: #fff; /* White icon on hover/active */
+}
+
+
+.main-content-column {
+     background-color: #f4f7f6; /* Match body background */
+     padding: 20px; /* Padding around main content */
+}
+
+
+/*--- Headings (Keep mostly the same, adjust margin) ---*/
+h2, h3, h4, h5, h6 {
+    color: #333; /* Dark headings in main content */
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+h2 { border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px; }
+
+
+/*--- Cards (Refine styles) ---*/
+.card {
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    margin-bottom: 1.5rem; /* Space between cards */
+    background-color: #fff; /* White card background */
+}
+
+.card-header {
+    font-weight: 500;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #eee; /* Separator below header */
+    background-color: #fff; /* White header by default */
+    color: #333; /* Dark text */
+}
+.card-header.bg-primary { background-color: #0056b3 !important; color: #fff !important;}
+.card-header.bg-warning { background-color: #ffc107 !important; color: #333 !important;}
+.card-header.bg-info { background-color: #17a2b8 !important; color: #fff !important;}
+.card-header.bg-secondary { background-color: #6c757d !important; color: #fff !important;}
+
+
+/*--- Stats Widgets (Mimic image) ---*/
+.stats-widget-row .card {
+    text-align: center;
+    padding: 15px; /* Padding inside card body */
+    background-color: #fff; /* White background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Lighter shadow for small stats */
+    border-radius: 0.5rem;
+}
+
+.stats-widget-row .stats-icon {
+    font-size: 2rem; /* Smaller icons for stats widgets */
+    margin-bottom: 5px;
+    color: #007bff;
+}
+.stats-widget-row .stats-icon.fa-female { color: #e83e8c; }
+.stats-widget-row .stats-icon.fa-notes-medical { color: #20c997; }
+
+
+.stats-widget-row .stats-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #343a40;
+    line-height: 1;
+    margin-bottom: 3px;
+}
+
+.stats-widget-row .stats-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: 400;
+}
+
+/* Specific colors for stats widgets if needed (like the yellow one in the image) */
+/* Example: .stats-widget-row .card.bg-warning { background-color: #ffc107 !important; color: #333; } */
+/* Example: .stats-widget-row .card.bg-warning .stats-icon { color: #333; } */
+/* You would add classes like <div class="card bg-warning"> in the HTML */
+
+
+/*--- Main Content Widgets (Lists, Charts, etc.) ---*/
+/* These will use the general .card style. Add specific styles if needed */
+.main-content-widget {
+    /* Specific padding if different from general card-body */
+}
+
+
+/*--- Forms (Keep mostly the same) ---*/
+.form-group { margin-bottom: 1.5rem; }
+.form-control { border-radius: 0.25rem; border: 1px solid #ccc; padding: 0.75rem 1rem; font-size: 1rem; }
+.form-control:focus { border-color: #007bff; box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
+label { font-weight: 500; color: #555; margin-bottom: 0.5rem; }
+.is-invalid .form-control { border-color: #dc3545; }
+.invalid-feedback { display: block; margin-top: 0.25rem; font-size: 0.875rem; color: #dc3545; }
+
+
+/*--- Tables (Keep mostly the same) ---*/
+.table { margin-bottom: 1.5rem; }
+.table th { background-color: #e9ecef; color: #495057; font-weight: 500; border-bottom: 2px solid #dee2e6; }
+.table-striped tbody tr:nth-of-type(odd) { background-color: rgba(0, 0, 0, 0.03); }
+.table-bordered th, .table-bordered td { border: 1px solid #dee2e6; }
+.table td { padding: 0.75rem; vertical-align: middle; }
+
+
+/*--- Alerts (Keep mostly the same) ---*/
+.alert { margin-top: 1.5rem; margin-bottom: 1.5rem; border-radius: 0.5rem; padding: 1rem 1.25rem; }
+
+
+/*--- Buttons (Keep mostly the same) ---*/
+/* Buttons will largely use Bootstrap's default styles */
+
+
+/*--- Footer (Keep mostly the same) ---*/
+.footer {
+    background-color: #e9ecef; /* Light gray footer */
+    color: #6c757d;
+    padding: 20px 0;
+    font-size: 0.9rem;
+    margin-top: 40px; /* Space above footer */
+}
+
+
+/*--- Responsive Adjustments ---*/
+@media (max-width: 767.98px) {
+    .sidebar-column {
+        padding-bottom: 20px;
+    }
+    .sidebar-user-profile {
+         border-bottom: none; /* Remove border when stacked */
+         margin-bottom: 0;
+         padding-bottom: 10px;
+    }
+    .sidebar-nav .list-group-item {
+         text-align: center; /* Center links when stacked */
+         padding: 10px 15px;
+    }
+     .sidebar-nav .list-group-item .action-icon {
+         margin-right: 0; /* Remove margin next to icon */
+         display: block; /* Stack icon and text */
+         margin-bottom: 5px;
+     }
+    .main-content-column {
+        padding: 15px; /* Adjust padding for small screens */
+    }
+
+}
